@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <title>Chart</title>
+</head>
+<body class="bg-warning py-5">
+    <div class="col-md-6 offset-md-3" >
+    <div class="card">
+    <div class="card-body">
+        <h2>Using Chart.js <button class="btn btn-success" onclick="updatechart()">Update</button></h2>
+    </div>
+    <div class="card-body">
+    <canvas id="myChart"></canvas>
+</div>
+</div>
+</div>
+<script >
+var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+  
+
+    // The data for our dataset
+    data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July','August','September'],
+        datasets: [{
+            label: 'My First dataset',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [0, 10, 5, 2, 20, 3, 45,40]
+        }]
+    },
+     
+
+
+});
+function updatechart(){
+    chart.data.datasets[0].data=[50, 40, 54, 6, 2, 36, 40,20,60,90,100,150,500];
+    chart.update();
+    
+}
+	setInterval(updatechart,3000);chart.data.datasets[0].data.push([40,40,30,20,20]);
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "charts",
+  "version": "1.0.0",
+  "description": "Making and recoding real time graphs and tracking system",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "live"
+  ],
+  "author": "shivam",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "chart.js": "^2.9.3",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "serialport": "^8.0.7",
+    "socket.io": "^2.3.0"
+  }
+}
